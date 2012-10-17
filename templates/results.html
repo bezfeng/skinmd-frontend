@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+	<title>SkinMD Results Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='main.css') }}" />
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='shared.css') }}" />
+</head>
+<body>
+	{% include 'header_admin.html' %}
+	<div class = "container">
+		<div id = "content">
+			<h3>Results</h3>
+			<p/>
+			{% if res %}
+				<b>Client ID:</b> {{ id }}
+				<br/>
+				<b>Score:</b> {{ res }}
+				<br/>
+				<b>Recommendation:</b> Not implemented yet
+			{% else %}
+				<p/>Server error encountered, please try again!
+			{% endif %}
+		</div>
+	</div>
+	{% include 'footer.html' %}
+</body>
+</html>

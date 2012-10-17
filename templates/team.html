@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+	<title>SkinMD Results Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='main.css') }}" />
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='shared.css') }}" />
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='jquery.qtip.min.css') }}" />
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+	<script type = "text/javascript" src = "{{ url_for('static', filename='jquery.qtip.min.js') }}"></script>
+</head>
+<body>
+	{% include 'header.html' %}
+	<div class = "container">
+		<div id = "content_team">
+			<hr>
+			<h3>The Team</h3>
+			<div class = "team_box" name = "Aldrin Abastillas" 
+				desc = "Computer Vision Lead <br/> iOS Developer"
+			>
+			<img src = "{{ url_for('static', filename='images/aldrin.jpg') }}" />
+			<br/>
+			</div>
+			
+			<div class = "team_box" name = "Bezhou Feng"
+				desc = "Website and Server Lead <br/> Computer Vision Engineering <br/>Android Developer"
+			>
+			<img src = "{{ url_for('static', filename='images/bez.jpg') }}" />
+			<br/>
+			</div>
+			
+			<div class = "team_box" name = "Lisa Jiang"
+				desc = " Machine Learning Lead <br/> Computer Vision Engineering"
+			>
+			<img src = "{{ url_for('static', filename='images/lisa.jpg') }}" />
+			<br/>
+			</div>
+			
+			<div class = "team_box" name = "Ryan Nakasone"
+				desc = "Medical Lead <br/> Computer Vision Engineering <br/> iOS Developer"
+			>
+			<img src = "{{ url_for('static', filename='images/ryan.jpg') }}" />
+			<br/>
+			</div>
+			
+			<div style = "clear: both;"></div>
+			
+			<h3 style = "margin-top: 40px;" >About Us</h3>
+			<p style = "text-align: left; margin-left: 30px;">
+			Formed in March of 2011, the SkinMD team consists of four bioengineering seniors
+			enrolled in the School of Engineering and Applied Science at the University of Pennsylvania.
+			<br/><br/>
+			Our advisor is Dr. Brian Litt.
+			</p>
+		</div>
+		<div style = "clear:both;"></div>
+	</div>
+	
+	{% include 'footer.html' %}
+	
+	<script>
+	$(document).ready(function() {
+		$("tr:even").css("background-color", "#D7EBFF");
+		$(".team_box").qtip({
+			content: {
+				text: function(api) {
+					return $(this).attr('desc');
+				},
+				title: {
+					text: function(api) {
+						return $(this).attr('name');
+					}
+				}
+			},
+			position: {
+				my: "top center",
+				at: "bottom center"
+			},
+			style: {
+               classes: 'ui-tooltip-shadow ui-tooltip-dark'
+            }
+		});
+	});
+	</script>
+</body>
+</html>

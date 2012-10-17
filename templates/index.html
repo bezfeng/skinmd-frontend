@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<title>SkinMD</title>
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='home.css') }}" />
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='shared.css') }}" />
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+	{% include 'header.html' %}
+	<div id = "banner">
+		<div class = "container">
+			<!--<img src = "{{ url_for('static', filename='images/phone.png') }}" id = "logo_img"/>-->
+			<div id = "logo_group">
+				<h1 id = "logo"><i>skin</i><b>MD</b></h1>
+				<div id = "logo_sub">
+					Putting 
+					<br/>greater knowledge
+					<br/> of skin conditions 
+					<br/><b><span style = "cursor: pointer;" 
+					class = "scrollPage" href = "#content">right into your hands.</span></b>
+				</div>
+				<div style = "position: absolute; bottom: 35px; border-radius: 10px; background: black; width: 150px; 
+				padding: 10px; text-align: center; font-weight: bold; 
+				margin-left: 150px; border: white 2px solid;"> Available soon in the app store</div>
+			</div>
+		</div>
+	</div>
+	<div style = "clear: both;"></div>
+	<div class = "container">
+		
+		<div id = "content">
+			<hr>
+			<h3>skin<b>MD</b> is an application that analyzes pictures of your skin and warns you about 
+			the possible presence of dangerous diseases.</h3>
+			<hr>
+			<h2>Easy to <b>USE</b></h2>
+			We know you're busy. We understand. Whether it's running off to an important business meeting,
+			going to dinner with friends, or even just taking a long-needed walk in the woods, your schedule
+			is never completely free. We've custom tailored skin<b>MD</b> to get you results with as little 
+			as two button clicks. 
+			
+			<div class = "feat_row">
+				<div class = "feat_col_1">
+					<h2 style = "color:red; font-weight: bold">1</h2>
+					Open the application and press start.
+				</div>
+				<div class = "feat_col_1">
+					<h2 style = "color:orange; font-weight: bold">2</h2>
+					Take a picture of your skin.
+				</div>
+				<div class = "feat_col_1">
+					<h2 style = "color:green; font-weight: bold">3</h2>
+					Receive results in less than one minute.
+				</div>
+			</div>
+			<div style = "clear: both;"></div>
+			
+			<hr>
+			<h2>Lightning <b>FAST</b></h2>
+			We're impatient. We don't want to wait, and we certainly don't like making our customers do the same.
+			Powered by a quad-core server running the latest hardware, our software is designed to analyze your 
+			skin as quickly as possible. 
+			
+			<div class = "feat_row">
+				<div class = "feat_col_3 center">
+					<img src = {{ url_for('static', filename='images/gpu.jpg') }} />
+					GPU Processing
+				</div>
+			</div>
+			
+			<hr>
+			<h2>Incredibly <b>SMART</b></h2>
+			Our engineers use the most advanced machine learning and image analysis techniques to ensure that our
+			results are accurate. But please, see a doctor, even if you have the slightest concerns. 
+			
+			<div class = "feat_row">
+				<div class = "feat_col_3" style = "margin-left: 130px;">
+					<img src = {{ url_for('static', filename='images/matlab_logo.gif') }} />
+					MATLAB&reg Powered
+				</div>
+				<div class = "feat_col_3">
+					<img src = {{ url_for('static', filename='images/svm.jpg') }} />
+					Support Vector Machines
+				</div>
+			</div>
+			<div style = "clear: both;"></div>
+		</div>
+	</div>
+	{% include 'footer.html' %}
+	
+	<script>
+	$(document).ready(function() {
+		$('.scrollPage').click(function() {
+			var destination = $("#content").offset().top;
+			$("html:not(:animated),body:not(:animated)").animate({ scrollTop: destination-20}, 500 );
+			return false;
+		});
+	});
+
+	</script>
+</body>
+</html>
+
+<!-- image credit: http://www.ihomee.com/mesmerizing-futuristic-surgery-clinic-interiors-design/surgery-clinic-photo-07/-->

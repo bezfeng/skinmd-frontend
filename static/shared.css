@@ -1,0 +1,111 @@
+/* font embedding */
+
+@font-face {
+	font-family: 'Optimus';
+	src: url('/static/fonts/zekton.ttf') format('truetype');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/static/fonts/segoeui.ttf');
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/static/fonts/segoeuib.ttf');
+	font-weight: bold;
+}
+
+@font-face {
+	font-family: 'Segoe UI';
+	src: url('/static/fonts/segoeuii.ttf');
+	font-style: italic;
+}
+
+/* tags */
+
+body {
+	margin: 0;
+	font-family: 'Segoe UI', 'Myriad Pro', 'Helvetica', sans-serif;
+	
+	/* smooth fonts */
+	text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
+	font-smooth:always;
+	-webkit-font-smoothing: antialiased;
+}
+
+/* ids */
+
+.container {
+	margin-left: auto;
+	margin-right: auto;
+	width: 800px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	float: none;
+}
+
+/* header new */
+
+#navbar {
+	position: absolute;
+	right: 0;
+	top: 20px;
+	font-size: 16px;
+	letter-spacing: 1px;
+	font-family: 'Segoe UI', 'Myriad Pro', 'Helvetica', sans-serif;
+}
+
+#team_logo {
+	position: relative;
+	width: 100%;
+	height: 50px;
+	margin-top: 20px;
+	letter-spacing: 2px;
+	margin-bottom: 20px;
+	font-size: 38px;
+	font-family: 'Optimus', 'Segoe UI', sans-serif;
+}
+
+#footer {
+	font-size: 10px;
+	border-top: 1px dashed black;
+	color: white;
+	background: black; 
+	margin-top: 30px;
+	padding: 15px;
+}
+
+/* old header, redo soon */
+
+#header {
+	margin-top: -10px;
+	background: black;
+	color:white;
+	height: 50px;
+	padding-left: 20px;
+	text-shadow: black 1px 1px;
+}
+
+/* links */
+
+#header a {
+	text-decoration: none;
+	color: white;
+}
+
+#navbar a {
+	margin-left: 15px;
+	margin-right: 15px;
+	text-decoration: none;
+	color: grey;
+}
+
+#navbar a:hover {
+	color: black;
+}

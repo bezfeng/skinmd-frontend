@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>SkinMD Results Page</title>
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='main.css') }}" />
+	<link rel = "stylesheet" type = "text/css" href = "{{ url_for('static', filename='shared.css') }}" />
+	<script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+	{% include 'header_admin.html' %}
+	<div class = "container">
+		<div id = "content">
+			<h3>All Current Results</h3>
+			<table>
+			<tr>
+				<th><b>Client ID</b></th>
+				<th><b>Date Uploaded</b></th>
+				<th><b>Score</b></th>
+			</tr>
+			{% if result_dict %}
+				{% for id in result_dict %}		
+					<tr>
+						<td><a href = "/view/{{ id }}"/>{{ id }}</a></td>
+						<td>{{ result_dict[id][0] }}</td>
+						<td>{{ result_dict[id][1] }}</td>
+					</tr>
+				{% endfor %}
+			{% else %}
+				<tr>Server error encountered, please try again!</tr>
+			{% endif %}
+			</table>
+		</div>
+	</div>
+	{% include 'footer.html' %}
+	
+	<script>
+	$(document).ready(function() {
+		$("tr:even").css("background-color", "#D7EBFF");
+	});
+	</script>
+</body>
+</html>
